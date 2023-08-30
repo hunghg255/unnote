@@ -72,78 +72,79 @@ npm/microtip@0.2.2/microtip.min.css
         </div>
       </div>
     </div>
-    <div id="controls" class="container-fluid shadow-bottom hide-readonly">
-      <div class="row align-items-center justify-content-end my-1">
-        <div class="col-auto mb-1">
-          <h1 class="my-0"><span>{</span> UnNote <span>}</span></h1>
-        </div>
-        <div class="col-auto">
-          <a
-            href="javascript:void(0)"
-            class="mx-3"
-            aria-label="Click to know more about UnNote"
-            data-microtip-position="bottom"
-            role="tooltip"
-            data-micromodal-trigger="description-modal"
-            >About</a
-          >
-          <a
-            href="https://github.com/hunghg255/unnote"
-            rel="noopener"
-            target="_blank"
-            class="mx-3"
-            >Source</a
-          >
-        </div>
-        <div class="col"></div>
-        <div class="col-auto my-1">
-          <select id="language"></select>
-        </div>
-        <div class="col-auto">
-          <button
-            onclick="enableLineWrapping()"
-            type="button"
-            id="enable-line-wrapping"
-            aria-label="Enable line wrapping"
-            data-microtip-position="bottom"
-            role="tooltip"
-          >
-            <span class="icon-notes"></span>
-          </button>
-          <button
-            onclick="disableLineWrapping()"
-            type="button"
-            id="disable-line-wrapping"
-            aria-label="Disable line wrapping"
-            data-microtip-position="bottom"
-            role="tooltip"
-            class="hidden"
-          >
-            <span class="icon-wrap-text"></span>
-          </button>
-        </div>
-        <div class="col-auto">
-          <button
-            class="py-1 px-2 mx-0 my-1"
-            onclick="generateLink('url')"
-            type="button"
-          >
-            Generate link
-          </button>
-          <button
-            class="py-1 px-2 mx-1 my-1"
-            onclick="generateLink('markdown')"
-            type="button"
-          >
-            Generate markdown
-          </button>
-          <button
-            class="py-1 px-2 mx-0 my-1"
-            onclick="generateLink('iframe')"
-            type="button"
-          >
-            Embed
-          </button>
+    <div id="controls" class="shadow-bottom hide-readonly">
+      <div class="flex align-items-center header">
+        <h1 class="m-0"><span>{</span> UnNote <span>}</span></h1>
+
+        <div class="flex flex-1 align-items-center justify-content-end gap-20 left">
+          <div class="flex gap-10 align-items-center my-1 sec-lang">
+            <select id="language"></select>
+
+            <div class="button-info">
+              <button
+                onclick="enableLineWrapping()"
+                type="button"
+                id="enable-line-wrapping"
+                aria-label="Enable line wrapping"
+                data-microtip-position="bottom"
+                role="tooltip"
+              >
+                <span class="icon-notes"></span>
+              </button>
+              <button
+                onclick="disableLineWrapping()"
+                type="button"
+                id="disable-line-wrapping"
+                aria-label="Disable line wrapping"
+                data-microtip-position="bottom"
+                role="tooltip"
+                class="hidden"
+              >
+                <span class="icon-wrap-text"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex gap-10 align-items-center sec-gen">
+            <button
+              class="py-1 px-2"
+              onclick="generateLink('url')"
+              type="button"
+            >
+              Generate link
+            </button>
+            <button
+              class="py-1 px-2"
+              onclick="generateLink('markdown')"
+              type="button"
+            >
+              Generate markdown
+            </button>
+            <button
+              class="py-1 px-2 "
+              onclick="generateLink('iframe')"
+              type="button"
+            >
+              Embed
+            </button>
+          </div>
+
+          <div class="flex gap-10 align-items-center info">
+            <a
+              href="javascript:void(0)"
+              aria-label="Click to know more about UnNote"
+              data-microtip-position="bottom"
+              role="tooltip"
+              data-micromodal-trigger="description-modal"
+              >About</a
+            >
+            <a
+              href="https://github.com/hunghg255/unnote"
+              rel="noopener"
+              target="_blank"
+              >Source</a
+            >
+          </div>
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@ body {
   color: #fff;
   font: normal 14px Roboto, sans-serif;
   background-color: #282a36;
+  overflow-x: hidden;
 }
 
 #editor {
@@ -255,4 +256,81 @@ button:hover {
 }
 .icon-notes:before {
   content: '\e903';
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+.header {
+  padding: 10px !important;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1 0 0;
+}
+
+@media (max-width: 996px) {
+  .info {
+    display: none;
+  }
+
+  .left {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .gap-20 {
+    gap: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .header h1 {
+    margin: 0 0 16px !important;
+  }
+
+  .header .ss-main {
+    width: initial !important;
+    flex: 1;
+  }
+
+  .sec-lang {
+    flex: 1 0 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+  }
+
+  .button-info {
+    padding-right: 0 !important;
+  }
+
+  .header > div {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .sec-gen {
+    padding: 0 !important;
+    margin: 0  !important;
+    width: 100% !important;
+  }
+
+  .sec-gen button {
+    flex: 1 0 0 !important;
+    width: initial !important;
+    white-space: nowrap;
+  }
 }
