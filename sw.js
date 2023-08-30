@@ -31,8 +31,10 @@ const PRECACHE_URLS = [
         'npm/codemirror@5.65.5/addon/scroll/simplescrollbars.css,' +
         'npm/codemirror@5.65.5/theme/dracula.min.css,' +
         'npm/microtip@0.2.2/microtip.min.css',
-    'https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono@2.242/fonts/webfonts/JetBrainsMono-Regular.woff2',
-    'https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono@2.242/fonts/ttf/JetBrainsMonoNL-Regular.ttf',
+    'font/FiraCodeLight-Medium.woff',
+    'font/FiraCodeLight-Medium.woff2',
+    'font/FiraCodeLight-Regular.woff',
+    'font/FiraCodeLight-Regular.woff2',
     'https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxK.woff2',
 ];
 
