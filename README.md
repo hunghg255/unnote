@@ -17,6 +17,10 @@ However, what makes UnNote special is that it works with **no database**, and **
 
 > **Note:** This project is a copy of [Topaz's paste service][topaz-example], with a reworked design and a few additional features (syntax highlighting, line numbers, offline usage, embedding...)
 
+### You can use a short link to reduce url size
+
+[short-url](https://url8.vercel.app/)
+
 ## How it works
 
 When you click on "Generate Link", UnNote compresses the whole text using the
