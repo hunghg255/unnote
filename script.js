@@ -173,7 +173,12 @@ const openInNewTab = () => {
 // Build a shareable URL
 const buildUrl = (rawData, mode) => {
     const base = `${location.protocol}//${location.host}${location.pathname}`;
-    const query = shorten('Plain Text') === select.selected() ? '' : `?l=${encodeURIComponent(select.selected())}&w=${wrap ? 1 : 0}`;
+    let query = shorten('Plain Text') === select.selected() ? '' : `?l=${encodeURIComponent(select.selected())}`;
+
+    if (wrap) {
+        query = query ? `${query}&w=1` : '?w=1';
+    }
+
     const url = base + query + '#' + rawData;
     if (mode === 'markdown') {
         return `[UnNote snippet](${url})`;
