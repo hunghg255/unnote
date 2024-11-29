@@ -3,6 +3,7 @@ const lzma = new LZMA(window.URL.createObjectURL(blob));
 
 let editor = null;
 let select = null;
+let wrap = false;
 let clipboard = null;
 let statsEl = null;
 
@@ -10,6 +11,7 @@ const init = () => {
     handleLegacyUrl();
     initCodeEditor();
     initLangSelector();
+    initWrapper();
     initCode();
     initClipboard();
     initModals();
@@ -55,6 +57,15 @@ const initLangSelector = () => {
     // Set lang selector
     const l = new URLSearchParams(window.location.search).get('l');
     select.set(l ? decodeURIComponent(l) : shorten('Plain Text'));
+};
+
+const initWrapper = () => {
+    const w = new URLSearchParams(window.location.search).get('w');
+    wrap = w === '1';
+
+    if (wrap) {
+        enableLineWrapping();
+    }
 };
 
 const initCode = () => {
@@ -145,12 +156,14 @@ const disableLineWrapping = () => {
     byId('disable-line-wrapping').classList.add('hidden');
     byId('enable-line-wrapping').classList.remove('hidden');
     editor.setOption('lineWrapping', false);
+    wrap = false;
 };
 
 const enableLineWrapping = () => {
     byId('enable-line-wrapping').classList.add('hidden');
     byId('disable-line-wrapping').classList.remove('hidden');
     editor.setOption('lineWrapping', true);
+    wrap = true;
 };
 
 const openInNewTab = () => {
@@ -160,7 +173,7 @@ const openInNewTab = () => {
 // Build a shareable URL
 const buildUrl = (rawData, mode) => {
     const base = `${location.protocol}//${location.host}${location.pathname}`;
-    const query = shorten('Plain Text') === select.selected() ? '' : `?l=${encodeURIComponent(select.selected())}`;
+    const query = shorten('Plain Text') === select.selected() ? '' : `?l=${encodeURIComponent(select.selected())}&w=${wrap ? 1 : 0}`;
     const url = base + query + '#' + rawData;
     if (mode === 'markdown') {
         return `[UnNote snippet](${url})`;
